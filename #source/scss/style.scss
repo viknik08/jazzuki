@@ -1,0 +1,647 @@
+//<МИКСИНЫ>===============================================================================================
+@import "mixins.scss";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily: "PT Sans";
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth: 320px;
+$mw: 1170;
+$md1: $mw + 12;
+$md2: 991.98;
+$md3: 768;
+$md4: 479.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null.scss";
+body {
+	color: #000;
+	font-size: 14px;
+	&.lock {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	&.loaded {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+	max-width: $mw + px;
+	margin: 0 auto;
+	width: 100%;
+	@media (max-width: $md1+px) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+.title {
+	font-weight: 700;
+	font-size: 30px;
+	letter-spacing: 2px;
+	@media (max-width: $md4+px) {
+		text-align: center;
+	}
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+.aboutus {
+	padding: 50px 0px;
+	background: rgb(222, 222, 222);
+}
+
+.aboutus-top {
+	@include flexbox();
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	&__colunm {
+		margin: 200px 0;
+		flex: 0 0 50%;
+		padding: 0px 10px;
+
+		@media (max-width: $md3+px) {
+			margin: 0;
+			padding: 20px 0px;
+		}
+		@media (max-width: $md4+px) {
+			padding: 15px 0px;
+		}
+	}
+
+	@media (max-width: $md3+px) {
+		display: block;
+		padding: 20px 50px;
+	}
+	@media (max-width: $md4+px) {
+		padding: 10px;
+	}
+}
+.aboutus-top-about {
+	color: rgb(0, 0, 0);
+
+	&__title {
+		margin: 0px 0px 30px 0px;
+		@media (max-width: $md4+px) {
+			margin: 0px 0px 15px 0px;
+		}
+	}
+
+	&__text {
+		font-size: 22px;
+		letter-spacing: 1.5px;
+		padding: 0px 50px 0px 0px;
+		line-height: 35px;
+		font-weight: 100;
+		@media (max-width: $md3+px) {
+			padding: 0;
+		}
+		@media (max-width: $md4+px) {
+			font-size: 16px;
+			letter-spacing: 1px;
+			line-height: 20px;
+		}
+	}
+}
+.aboutus-top-img {
+	@include flexbox();
+
+	&__one {
+		position: absolute;
+		top: 10%;
+		right: 25%;
+		z-index: 10;
+		img {
+			width: 300px;
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+		}
+		@media (max-width: $md3+px) {
+			position: relative;
+			top: 0;
+			left: 0;
+			margin: 0px 10px 0px 0px;
+			img {
+				width: 200px;
+			}
+		}
+		@media (max-width: $md4+px) {
+			img {
+				width: 70vw;
+			}
+		}
+	}
+
+	&__two {
+		position: absolute;
+		top: 50%;
+		right: 20%;
+		z-index: 11;
+		img {
+			width: 200px;
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+		}
+		@media (max-width: $md3+px) {
+			position: relative;
+			top: 0;
+			left: 0;
+			margin: 0px 10px 0px 0px;
+		}
+		@media (max-width: $md4+px) {
+			left: 20%;
+			margin: 15px 0px 0px 0px;
+			img {
+				width: 70vw;
+			}
+		}
+	}
+
+	&__three {
+		position: absolute;
+		top: 20%;
+		right: 0;
+		z-index: 10;
+		img {
+			width: 250px;
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+		}
+		@media (max-width: $md3+px) {
+			position: relative;
+			top: 0;
+			left: 0;
+			img {
+				width: 200px;
+			}
+		}
+		@media (max-width: $md4+px) {
+			display: none;
+		}
+	}
+
+	@media (max-width: $md4+px) {
+		// display: block;
+		flex-wrap: wrap;
+	}
+}
+.triglering {
+	width: 100%;
+	border-left: 720px solid transparent;
+	border-right: 740px solid transparent;
+	border-top: 65px solid rgb(222, 222, 222);
+	@media (max-width: $md2+px) {
+		border-left: 720px solid transparent;
+		border-right: 740px solid transparent;
+		border-top: 65px solid rgb(222, 222, 222);
+	}
+	@media (max-width: $md3+px) {
+		border-left: 400px solid transparent;
+		border-right: 400px solid transparent;
+		border-top: 50px solid rgb(222, 222, 222);
+	}
+	@media (max-width: $md4+px) {
+		border-left: 207px solid transparent;
+		border-right: 207px solid transparent;
+		border-top: 30px solid rgb(222, 222, 222);
+	}
+}
+
+// =================
+// popup
+
+.popupp {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	top: 0;
+	left: 0;
+	z-index: 100;
+	overflow: auto;
+	@include anim(0.3s, 0s);
+	&.open {
+		display: block;
+	}
+
+	&__body {
+		min-height: 100%;
+		@include flexbox();
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__content {
+		width: 100vw;
+		height: 100vh;
+		background: #fff;
+		color: #000;
+		padding: 30px;
+		position: relative;
+		@include anim(0.5s, 0s);
+		opacity: 1;
+	}
+
+	&__title {
+		font-size: 30px;
+		margin: 0px 0px 20px 0px;
+	}
+
+	&__text {
+		font-size: 15px;
+		line-height: 20px;
+	}
+	&__img {
+		img {
+			width: 30vw;
+			height: 70vh;
+		}
+	}
+}
+.close {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	font-size: 30px;
+	color: rgb(0, 0, 0);
+	cursor: pointer;
+	@include anim(0.3s, 0s);
+	transform: rotate(45deg);
+
+	&:hover {
+		color: #ba0000;
+		transform: rotate(0);
+	}
+}
+
+// .popupp:target .popupp__content {
+// 	transform: translate(0px, 0px);
+// 	opacity: 1;
+// }
+
+// ============================================
+
+.ourwork {
+	margin: 0px 0px 0px 0px;
+	&__header {
+	}
+
+	&__body {
+	}
+
+	&__item {
+	}
+	@media (max-width: $md2+px) {
+		margin: 0px 0px 50px 0px;
+	}
+	@media (max-width: $md3+px) {
+		margin: 0px 0px 25px 0px;
+	}
+}
+
+.heder-ourwork {
+	@include flexbox();
+	justify-content: space-between;
+	align-items: center;
+	margin: 40px 0px 40px 0px;
+	&__title {
+		@media (max-width: $md3+px) {
+			margin: 0px 0px 30px 0px;
+		}
+		p {
+			letter-spacing: 1.2px;
+			font-size: 20px;
+			font-weight: normal;
+			margin: 20px 0px 0px 0px;
+		}
+	}
+	&__text {
+		font-size: 13px;
+	}
+
+	&__nav {
+	}
+	@media (max-width: $md3+px) {
+		display: block;
+	}
+}
+
+.nav-ourwork {
+	@include flexbox();
+	&__item {
+		color: #d3cfce;
+		margin: 0px 0px 0px 30px;
+		font-size: 16px;
+		font-weight: 700;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		line-height: 16px;
+		cursor: pointer;
+		&.active {
+			color: #000;
+		}
+		@media (max-width: $md2+px) {
+			margin: 0px 0px 0px 50px;
+		}
+		@media (max-width: $md3+px) {
+			margin: 0 0 10px 0;
+		}
+	}
+	@media (max-width: $md3+px) {
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+}
+
+.item-ourwork {
+	@include flexbox();
+	margin: 0px -15px;
+	&__column {
+		flex: 0 0 33.333%;
+		padding: 0 15px;
+		margin: 0px 0px 25px 0px;
+		@media (max-width: $md2+px) {
+			flex: 0 0 50%;
+		}
+		@media (max-width: $md3+px) {
+			flex: 1 1 100%;
+		}
+	}
+
+	&__content {
+	}
+	flex-wrap: wrap;
+}
+
+.content-ourwork {
+	@include flexbox();
+	flex-direction: column;
+	height: 100%;
+	&__hedear {
+	}
+
+	&__text {
+		flex: 1 1 auto;
+		color: #646667;
+		font-size: 16px;
+		line-height: 15px;
+		padding: 28px 0px;
+		@media (max-width: $md3+px) {
+			flex: 0 0 auto;
+		}
+	}
+
+	&__more {
+		color: #007397;
+		font-size: 16px;
+		line-height: 16px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		font-weight: 700;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&__title {
+		font-size: 24px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		line-height: 0px;
+		color: #000;
+		padding: 25px 0px 0px 0px;
+		width: 100%;
+	}
+}
+.hedear-ourwork {
+	height: 370px;
+	position: relative;
+	background: #000;
+	overflow: hidden;
+
+	&__img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0.6;
+		@include anim(0.5s, 0s);
+
+		&:hover {
+			opacity: 0.8;
+			@include anim(0.5s, 0s);
+			transform: scale(1.1);
+		}
+	}
+	&__more {
+		position: absolute;
+		top: 10%;
+		right: 10%;
+		color: #fff;
+		font-size: 18px;
+		line-height: 16px;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+		font-weight: 700;
+		opacity: 0.8;
+		@include anim(0.3s, 0s);
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+// ==============================
+
+.block {
+	padding: 50px 0px;
+	background: rgb(222, 222, 222);
+}
+.block__item {
+	max-width: 70%;
+	background: #fff;
+	margin: 1px auto;
+	@media (max-width: $md4+px) {
+		max-width: 100%;
+	}
+}
+.block-title p {
+	letter-spacing: 1.2px;
+	font-size: 20px;
+	font-weight: normal;
+	margin: 20px 0px 40px 0px;
+	@media (max-width: $md4+px) {
+		line-height: 27px;
+	}
+}
+.block__title {
+	line-height: 70px;
+	font-size: 30px;
+	letter-spacing: 1.5px;
+	position: relative;
+	padding: 0px 0px 0px 30px;
+	cursor: pointer;
+	font-weight: 700;
+	@include anim(0.3s, 0s);
+	span {
+		font-size: 35px;
+		position: absolute;
+		top: 5%;
+		right: 3%;
+		transform: rotate(45deg);
+		@include anim(0.3s, 0s);
+		color: rgb(180, 178, 178);
+	}
+	&:hover span {
+		color: rgb(0, 0, 0);
+	}
+	&.active span {
+		opacity: 1;
+		transform: rotate(0deg);
+		color: red;
+	}
+	@media (max-width: $md4+px) {
+		line-height: 60px;
+		font-size: 20px;
+		letter-spacing: 1.2px;
+		font-weight: 700;
+	}
+}
+
+.block__text {
+	letter-spacing: 1.3px;
+	font-size: 16px;
+	display: none;
+	padding: 20px 50px;
+	ul {
+		line-height: 25px;
+	}
+	li {
+		list-style: disc;
+		margin: 7px 0;
+	}
+}
+//=========================
+
+.geoposition {
+	padding: 50px 0px;
+	&__title {
+		p {
+			letter-spacing: 1.2px;
+			font-size: 20px;
+			font-weight: normal;
+			margin: 20px 0px 0px 0px;
+			@media (max-width: $md4+px) {
+				line-height: 27px;
+			}
+		}
+	}
+}
+
+.geoposition-row {
+	@include flexbox();
+	&__column {
+		flex: 0 0 33.333%;
+	}
+	@media (max-width: $md4+px) {
+		display: block;
+	}
+}
+.colunm-geoposition {
+	padding: 50px 0px 0px 0px;
+	margin: 40px 0px 100px 0px;
+	&__img {
+		text-align: center;
+		margin: 0px 0px 30px 0px;
+		img {
+			width: 50px;
+		}
+	}
+	@media (max-width: $md4+px) {
+		padding: 25px 0px 0px 0px;
+		margin: 20px 0px 50px 0px;
+	}
+
+	&__title {
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 10px;
+		letter-spacing: 1.2px;
+		text-align: center;
+		margin: 0px 0px 30px 0px;
+		@media (max-width: $md4+px) {
+			font-size: 24px;
+			margin: 0px 0px 15px 0px;
+		}
+	}
+
+	&__text {
+		font-size: 24px;
+		text-align: center;
+		letter-spacing: 1.2px;
+		a {
+			color: #000;
+			@include anim(0.3s, 0s);
+			&:hover {
+				color: #ba0000;
+			}
+		}
+		@media (max-width: $md4+px) {
+			font-size: 16px;
+		}
+	}
+}
+.map {
+	height: 448px;
+}
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+// @import "forms.scss";
+@import "ui.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "../../js/fancybox/jquery.fancybox.scss";
+//@import "datepicker.scss";
+//@import "fontawesome.scss";
+//@import "popover.min.scss";
+//@import "baguetteBox.scss";
+//@import "pagging.scss";
+//@import "icons.scss";
+// @import "popup.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "home.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+
+//====================================================================================================
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
